@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  testNew
+//
+//  Created by jsb on 15/4/14.
+//  Copyright (c) 2015年 liwanlu. All rights reserved.
+//
+
+#ifndef testNew_PrefixHeader_pch
+#define testNew_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+#import "Constants.h"
+#import "zxHeader.h"
+#import "NSString+TL.h"
+#import "UIDevice+TL.h"
+#import "UIImage+TL.h"
+#import "UIView+TL.h"
+#endif
+
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
